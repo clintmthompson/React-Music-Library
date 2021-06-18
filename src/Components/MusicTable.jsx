@@ -1,29 +1,35 @@
 import React, { Component } from "react"
+import axios from 'axios'
 
 class SongTable extends Component{
     state = {
         songs: [
-            {
-                title: 'test title 1',
-                artist: '1',
-                album: '1',
-                release_date: '1980-10-31'
-            },
-            {
-                title:'test title 2',
-                artist: '2',
-                album: '2',
-                release_date: '1980-10-31'
-            },
-            {
-                title:'test title 3',
-                artist: '3',
-                album: '3',
-                release_date: '1980-10-31'
-            },
+
         ]
     }
 
+
+    componentDidMount(){
+        this.getSongs();
+    }
+
+    async getSongs(){
+        let response = await axios.get('http://127.0.0.1:8000/music/');
+
+        let i
+        
+        for(i = 0; i < response.data.length; i++){
+            const newSong={ 
+            title: response.data[i].title, 
+            artist: response.data[i].artist, 
+            album: response.data[i].album, 
+            release_date: response.data[i].release_date
+            }
+            this.setState({ songs: this.state.songs.concat(newSong)})
+        }
+    }
+
+    
 
     render() {
         return (
