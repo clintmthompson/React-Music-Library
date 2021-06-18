@@ -1,11 +1,14 @@
 import '../Styles/App.css'
+import React, {Component} from 'react'
 
-function App() {
-  return (
-    <div className="App">
-      <h1>Test</h1>
-    </div>
-  );
+class App extends Component {
+  state = {   }
+
+  render() {
+    return(
+      <h1>Music Library</h1>
+    )
+  }
 }
 
-export default App;
+export default App
