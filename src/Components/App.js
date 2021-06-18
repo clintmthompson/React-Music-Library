@@ -1,12 +1,15 @@
 import '../Styles/App.css'
 import React, {Component} from 'react'
+import SongTable from './MusicTable'
 
 class App extends Component {
   state = {   }
 
   render() {
     return(
-      <h1>Music Library</h1>
+      <React.Fragment>
+        <SongTable />
+      </React.Fragment>
     )
   }
 }
