@@ -8,6 +8,13 @@ class SongTable extends Component{
         ]
     }
 
+    deleteSong = (id) => {
+           axios.delete(`http://127.0.0.1:8000/music/${id}/`)
+           window.location.reload();
+
+        
+        
+}
 
     componentDidMount(){
         this.getSongs();
@@ -15,15 +22,16 @@ class SongTable extends Component{
 
     async getSongs(){
         let response = await axios.get('http://127.0.0.1:8000/music/');
-
         let i
-        
+
         for(i = 0; i < response.data.length; i++){
             const newSong={ 
             title: response.data[i].title, 
             artist: response.data[i].artist, 
-            album: response.data[i].album, 
-            release_date: response.data[i].release_date
+            album: response.data[i].album,
+            genre: response.data[i].genre, 
+            release_date: response.data[i].release_date,
+            id: response.data[i].id
             }
             this.setState({ songs: this.state.songs.concat(newSong)})
         }
@@ -42,6 +50,7 @@ class SongTable extends Component{
                     <th style={{border:'1px solid black'}}>Title</th>
                     <th style={{border:'1px solid black'}}>Artist</th>
                     <th style={{border:'1px solid black'}}>Album</th>
+                    <th style={{border:'1px solid black'}}>Genre</th>
                     <th style={{border:'1px solid black'}}>Release Date</th>
                 </tr>
 
@@ -50,10 +59,14 @@ class SongTable extends Component{
                         <td style={{border:'1px solid black'}}>{songs.title}</td>
                         <td style={{border:'1px solid black'}}>{songs.artist}</td>
                         <td style={{border:'1px solid black'}}>{songs.album}</td>
+                        <td style={{border:'1px solid black'}}>{songs.genre}</td>
                         <td style={{border:'1px solid black'}}>{songs.release_date}</td>
+                        <button onClick={() => this.deleteSong(songs.id)}>Delete Song</button>
                     </tr>
                 ))}
-            </table><br />
+            </table>
+            
+            <br />
 
                 
         </div>
