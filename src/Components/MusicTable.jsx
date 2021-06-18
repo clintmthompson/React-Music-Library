@@ -1,45 +1,15 @@
-import React, { Component } from "react"
 import axios from 'axios'
 
-class SongTable extends Component{
-    state = {
-        songs: [
 
-        ]
-    }
-
-    deleteSong = (id) => {
-           axios.delete(`http://127.0.0.1:8000/music/${id}/`)
-           window.location.reload();
-
-        
-        
-}
-
-    componentDidMount(){
-        this.getSongs();
-    }
-
-    async getSongs(){
-        let response = await axios.get('http://127.0.0.1:8000/music/');
-        let i
-
-        for(i = 0; i < response.data.length; i++){
-            const newSong={ 
-            title: response.data[i].title, 
-            artist: response.data[i].artist, 
-            album: response.data[i].album,
-            genre: response.data[i].genre, 
-            release_date: response.data[i].release_date,
-            id: response.data[i].id
-            }
-            this.setState({ songs: this.state.songs.concat(newSong)})
-        }
-    }
+const SongTable = (props) => {
 
     
+        const deleteSong = (id) => {
+            axios.delete(`http://127.0.0.1:8000/music/${id}/`)
+            window.location.reload();
+             }
 
-    render() {
+
         return (
         <div>
 
@@ -54,14 +24,14 @@ class SongTable extends Component{
                     <th style={{border:'1px solid black'}}>Release Date</th>
                 </tr>
 
-                {this.state.songs.map((songs) => (
+                {props.songs.map((songs) => (
                     <tr style={{border:'1px solid black'}}>
                         <td style={{border:'1px solid black'}}>{songs.title}</td>
                         <td style={{border:'1px solid black'}}>{songs.artist}</td>
                         <td style={{border:'1px solid black'}}>{songs.album}</td>
                         <td style={{border:'1px solid black'}}>{songs.genre}</td>
                         <td style={{border:'1px solid black'}}>{songs.release_date}</td>
-                        <button onClick={() => this.deleteSong(songs.id)}>Delete Song</button>
+                        <button onClick={() => deleteSong(songs.id)}>Delete Song</button>
                     </tr>
                 ))}
             </table>
@@ -72,6 +42,4 @@ class SongTable extends Component{
         </div>
         )
 }
-}
-
 export default SongTable
