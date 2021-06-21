@@ -22,6 +22,7 @@ const SongTable = (props) => {
                     <th style={{border:'1px solid black'}}>Album</th>
                     <th style={{border:'1px solid black'}}>Genre</th>
                     <th style={{border:'1px solid black'}}>Release Date</th>
+                    <th style={{border:'1px solid black'}}>Delete</th>
                 </tr>
 
                 {props.songs.map((songs) => (

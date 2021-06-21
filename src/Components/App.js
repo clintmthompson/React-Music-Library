@@ -1,5 +1,6 @@
 import '../Styles/App.css'
 import React, {Component} from 'react'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import SongTable from './MusicTable'
 import axios from 'axios'
 import NewSong from './AddSong'
@@ -56,9 +57,9 @@ async getSongs(){
   render() {
     return(
       <React.Fragment>
-        <SongTable songs={this.state.songs} getSongs={this.getSongs}/>
-        <NewSong />
-        <FilterSongs filterSongsFunction={this.filterSongs} getSongs={this.getSongs}/>
+          <SongTable songs={this.state.songs} getSongs={this.getSongs}/>
+          <NewSong />
+          <FilterSongs filterSongsFunction={this.filterSongs} getSongs={this.getSongs}/>
       </React.Fragment>
     )
   }

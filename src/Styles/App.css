@@ -1,0 +1,44 @@
+*{
+    background-color: rgb(255, 249, 244);
+}
+
+h1{
+    text-align: center;
+    background-color: rgb(140, 226, 255);
+}
+
+table{
+    text-align: center;
+    width: 100%;
+    background-color: lightblue;
+}
+
+
+form{
+padding-right: 45%;
+text-align: right;
+}
+
+input{
+    background-color: white;
+}
+
+tr{
+    background-color: lightblue;
+}
+
+td{
+    background-color: lightblue;
+}
+
+th{
+    background-color: rgb(140, 226, 255);
+}
+
+button{
+    background-color: rgb(72, 209, 255);
+}
+
+
+
+
