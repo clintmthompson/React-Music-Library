@@ -4,10 +4,10 @@ import axios from 'axios'
 const SongTable = (props) => {
 
     
-        const deleteSong = (id) => {
-            axios.delete(`http://127.0.0.1:8000/music/${id}/`)
+        const deleteSong = async (id) => {
+            await axios.delete(`http://127.0.0.1:8000/music/${id}/`)
             window.location.reload();
-             }
+        }
 
 
         return (
@@ -36,7 +36,7 @@ const SongTable = (props) => {
                 ))}
             </table>
             
-            <br />
+            <br /><br />
 
                 
         </div>

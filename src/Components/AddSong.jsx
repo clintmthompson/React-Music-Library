@@ -48,7 +48,7 @@ class NewSong extends Component {
             <label htmlFor="release_date">Release Date: </label>
             <input type="text" name="release_date" onChange={this.handleChange} value={this.state.release_date}/><br />
             <button type='submit'>Add Song</button>
-            </form>
+            </form><br /><br />
 
             </div>
         )
