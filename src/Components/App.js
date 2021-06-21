@@ -2,6 +2,7 @@ import '../Styles/App.css'
 import React, {Component} from 'react'
 import SongTable from './MusicTable'
 import axios from 'axios'
+import NewSong from './AddSong'
 
 class App extends Component {
   state = {
@@ -9,7 +10,6 @@ class App extends Component {
      }
     
      
-
 
 componentDidMount(){
    this.getSongs();
@@ -38,6 +38,7 @@ async getSongs(){
     return(
       <React.Fragment>
         <SongTable songs={this.state.songs}/>
+        <NewSong />
       </React.Fragment>
     )
   }
