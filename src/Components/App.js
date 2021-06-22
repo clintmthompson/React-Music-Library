@@ -58,6 +58,7 @@ async getSongs(){
     return(
       <React.Fragment>
           <SongTable songs={this.state.songs} getSongs={this.getSongs}/>
+          <img src='https://c4.wallpaperflare.com/wallpaper/473/791/587/mario-cap-mustache-background-wallpaper-preview.jpg' alt='mario' className='mario'></img>
           <NewSong />
           <FilterSongs filterSongsFunction={this.filterSongs} getSongs={this.getSongs}/>
       </React.Fragment>

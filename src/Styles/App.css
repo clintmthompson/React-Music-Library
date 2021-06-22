@@ -1,16 +1,20 @@
 *{
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(43, 44, 43);
+    
 }
+
 
 h1{
     text-align: center;
-    background-color: rgb(140, 226, 255);
+    background-color: rgb(220, 46, 41);
+    font-family: 'Press Start 2P', cursive;
+    color: rgb(43, 44, 43);
 }
 
 table{
     text-align: center;
     width: 100%;
-    background-color: lightblue;
+    background-color: rgb(138, 137, 136);
 }
 
 
@@ -20,85 +24,99 @@ text-align: right;
 }
 
 input{
-    background-color: white;
+    background-color: rgb(241, 242, 237);
 }
 
 tr{
-    background-color: lightblue;
+    background-color: rgb(138, 137, 136);
 }
 
 td{
-    background-color: lightblue;
+    background-color: rgb(138, 137, 136);
 }
 
 th{
-    background-color: rgb(140, 226, 255);
+    background-color: rgb(220, 46, 41);
 }
 
 button{
-    background-color: rgb(72, 209, 255);
+    background-color: rgb(220, 46, 41);
 }
 button:hover{
-    background-color: rgb(45, 175, 218);
+    background-color: rgb(170, 34, 29);
 }
 
 label{
-    color: white;
+    color: rgb(241, 242, 237);
 }
+
+.mario{
+    padding-left: 38%;
+    height: 250px;
+    width: auto;
+}
+
+
+
 
 @media only screen and (max-width: 600px) {
 
     *{
-        background-color: rgb(0, 0, 0);
+        background-color: rgb(43, 44, 43);
+        padding: none;
+        
     }
     
     h1{
         text-align: center;
-        background-color: rgb(140, 226, 255);
+        background-color: rgb(220, 46, 41);
+        width: 100%;
+        font-family: 'Press Start 2P', cursive;
+        color:rgb(43, 44, 43);
     }
     
     table{
         text-align: center;
         width: 100%;
-        background-color: lightblue;
+        background-color: rgb(138, 137, 136);
     }
     
     
     form{
     padding-right: 45%;
-    text-align: right;
+    text-align: left;
     }
     
     input{
-        background-color: white;
+        background-color: rgb(241, 242, 237);
     }
     
     tr{
-        background-color: lightblue;
+        background-color: rgb(138, 137, 136);
     }
     
     td{
-        background-color: lightblue;
+        background-color: rgb(138, 137, 136);
     }
     
     th{
-        background-color: rgb(140, 226, 255);
+        background-color: rgb(220, 46, 41);
     }
     
     button{
-        background-color: rgb(72, 209, 255);
+        background-color: rgb(220, 46, 41);
     }
     button:hover{
-        background-color: rgb(45, 175, 218);
+        background-color: rgb(170, 34, 29);
     }
     
     label{
-        color: white;
-        float: left;
-        padding-left: 20px;
+        color: rgb(241, 242, 237);
     }
-
-  }
-
-
-
+    
+    .mario{
+        padding: 0px;
+        height: 250px;
+        width: auto;
+    }
+}
